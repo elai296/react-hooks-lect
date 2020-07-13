@@ -7,7 +7,7 @@ class Booklist extends Component {
     const { isLightTheme, light, dark } = this.context;
     const theme = isLightTheme ? light : dark;
     return ( 
-      <div className="book-list" styles={{color: theme.syntax, background: theme.bg }}>
+      <div className='book-list' styles={{color: theme.syntax, background: theme.bg }}>
         <ul>
           <li style = {{ background: theme.ui }}>the way of kings</li>
           <li style = {{ background: theme.ui }}>the name of the wind</li>
