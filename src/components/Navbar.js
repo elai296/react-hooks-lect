@@ -5,9 +5,11 @@ class Navbar extends Component {
   static contextType = ThemeContext; //this allows to pass data to individual component
 
   render() { 
+    const { isLightTheme, light, dark } = this.context;
+    const theme = isLightTheme ? light : dark ;
     return ( 
       console.log(this.context),
-      <nav>
+      <nav style= { {background: theme.ui, color: theme.syntax}}>
         <h1>Context App</h1>
         <ul>
           <li>Home</li>
