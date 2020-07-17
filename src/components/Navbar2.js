@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 
-class Navbar extends Component {
+class Navbar2 extends Component { //this is for context consume!! consumer can be use for functional component as well.
+    static contextType = ThemeContext;
     render () {
-        const { isLightTheme, light, dark } = this.context;
-        const theme = isLightTheme ? light : dark;
         return (
-            <ThemeContext.Consumer> {(context) =>{
+            <ThemeContext.Consumer>  
+                {(context) =>{ //take in an argument, ThemeContext.Consumer must wrap around everything
+                const { isLightTheme, light, dark } = this.context; //put the data from the context in this the function
+                const theme = isLightTheme ? light : dark;
                 return (
                     <nav style= {{background: theme.ui, color: theme.syntax}}>
                     <h1>Context App</h1>
@@ -24,3 +26,5 @@ class Navbar extends Component {
         );
     }
 }
+
+export default Navbar2;

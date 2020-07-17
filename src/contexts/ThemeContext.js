@@ -8,6 +8,10 @@ class ThemeContextProvider extends Component {
         dark: { syntax: '#ddd', ui: '#333', bg: '#555'}
      } //share data
 
+     toggleTheme = () => {
+         this.setState( {isLightTheme: !isLightTheme});
+     }
+
     render() {
         return (
             <ThemeContext.Provider value={{...this.state}}> 
